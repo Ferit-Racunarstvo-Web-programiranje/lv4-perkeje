@@ -2,7 +2,7 @@
 session_start();
 include("db.php");
 
-$sqlProducts = "SELECT * FROM `products` ORDER BY id DESC LIMIT 4";
+$sqlProducts = "SELECT * FROM `products`";
 $resultProducts = $spoj->query($sqlProducts);
 ?>
 
@@ -15,30 +15,10 @@ $resultProducts = $spoj->query($sqlProducts);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
     <title>Web Market</title>
-    <style>
-        body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        font-family: Arial, sans-serif;
-        opacity: 0; 
-        animation: fade-in .5s ease-in forwards;
-        }
-
-        @keyframes fade-in {
-        from {
-            opacity: 0; 
-        }
-        to {
-            opacity: 1; 
-        }
-        }
-
-    </style>
 </head>
 
 <body>
-    <nav class="nav-web-market">
+<nav class="nav-web-market">
         <h1><a href="index.php">Web Market</a></h1>
         <div class="nav-menu">
         <?php
@@ -54,12 +34,8 @@ $resultProducts = $spoj->query($sqlProducts);
             } else {
                 echo '<a href="dashboard.php">Dashboard</a>';
             }
-            ?>
-        </div>
+            ?>        </div>
     </nav>
-    <div class="featured-img">
-
-    </div>
 
     <div class="products-container">
         <?php
